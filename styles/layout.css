@@ -1,13 +1,14 @@
 footer{
-    margin-top: 5%;
     text-align: center;
     font-weight: 800;
     font-size: 22px;
     background-color: blue;
     height: 50px;
     line-height: 50px;
+    margin-top: 350%;
 }
 
 section{
     margin-top: 10%;
+    float: left;
 }

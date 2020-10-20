@@ -2,6 +2,7 @@
 
 // function constructor
 let allImages = [];
+let selected = [];
 function Gallery (item){
   this.image_url = item.image_url;
   this.title = item.title;
@@ -18,6 +19,7 @@ Gallery.prototype.render = function(){
   image.find('img').attr('src', this.image_url);
   image.find('p').text(this.description);
   image.removeClass('photo-template');
+  image.attr('class',this.keyword);
 }
 
 Gallery.readJson = () => {
@@ -30,15 +32,26 @@ Gallery.readJson = () => {
     data.forEach((item) => {
       let gallery = new Gallery(item);
       gallery.render();
+      if(!selected.includes(gallery.keyword)) {
+        selected.push(gallery.keyword);
+        $('select').append(`<option value = ${gallery.keyword}>`+ gallery.keyword +'</option>')
+      }
     });
   });
 };
 
 $(() => Gallery.readJson());
 
-// function addKeyword(){
-//   const keywords = [];
 
-// $('select').append('<option> </option>');
-
-// }
+$('document').ready(function filterSelected(){
+  $('select').on('change', function(){
+    let userSelection = $(this).val();
+    if(userSelection === 'default'){
+      $('section').fadeIn();
+      $('.hide').hide();
+    }else{
+      $('section').hide();
+      $(`.${userSelection}`).fadeIn();
+    }
+  })
+})
