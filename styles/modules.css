@@ -1,4 +1,12 @@
-.photo-template{
+/* .photo-template{
     display: none;
+} */
+#buttons{
+    display: flex;
+    width: 600px;
+    margin-left: 30%;
+    margin-top: 2%;
+    justify-content: space-around;
 }
+
 

@@ -5,10 +5,17 @@ footer{
     background-color: blue;
     height: 50px;
     line-height: 50px;
-    margin-top: 350%;
+    margin-top: 5%;
 }
 
 section{
     margin-top: 10%;
-    float: left;
+    /* float: left; */
+    flex-grow: 1;
 }
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+  }
