@@ -18,6 +18,7 @@ select{
     margin-left: 38%;
     margin-top: 3%;
     font-size: 25px;
+    cursor: pointer;
 }
 
 h2{
@@ -40,6 +41,16 @@ p{
     font-size: 17px;
     font-weight: bold;
     text-decoration: underline blue;
-    width: 300px;
+    width: 400px;
     margin-left: 30px;
+}
+button{
+    font-size: 20px;
+    width: 140px;
+    border-style: none;
+    height: 50px;
+}
+button:hover{
+    background-color: blue;
+    cursor: pointer;
 }
